@@ -115,6 +115,8 @@ textarea{resize:vertical;min-height:44px}
 
 /* confirmation */
 .done{max-width:640px}
+.done-help{margin-top:18px;color:var(--muted);font-size:16px}
+.done-help a{color:var(--cream)}
 .done h2{color:var(--amber)}
 .pay{display:grid;gap:24px;align-items:center;margin:28px 0;border:1px solid var(--rule);padding:24px}
 @media(min-width:600px){.pay{grid-template-columns:180px 1fr}}
@@ -300,6 +302,7 @@ footer a:hover{color:var(--amber)}
       <p class="eyebrow" id="done-eyebrow">Order received</p>
       <h2>Thank you!</h2>
       <p id="done-msg"></p>
+      <p class="done-help">If you have any issues, please reach out to <a href="tel:+19842840159">984-284-0159</a> or <a href="mailto:GravesWalkerLights@gmail.com">GravesWalkerLights@gmail.com</a>.</p>
       <div class="pay hidden" id="pay-venmo">
         <img src="img/venmo-qr.svg" alt="Venmo QR code for @LightedBalls">
         <div>
