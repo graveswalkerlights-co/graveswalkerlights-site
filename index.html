@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lighted Christmas Balls · GravesWalkerLights &amp; Co.</title>
+<meta name="description" content="Hand-built galvanized steel lighted Christmas balls, made in Raleigh, NC. $25 each. Free pickup or local delivery.">
+<meta property="og:title" content="Lighted Christmas Balls · GravesWalkerLights & Co.">
+<meta property="og:description" content="Hand-built steel light balls, made in Raleigh. $25 each.">
+<meta property="og:image" content="img/hero-sm.jpg">
+<meta name="theme-color" content="#0e0f12">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300;1,9..144,400&family=Libre+Franklin:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --night:#0e0f12; --night-2:#16171b; --rule:#2b2a28;
+  --cream:#f3e6cc; --muted:#a99f8c; --amber:#ffbf5a; --amber-deep:#e89a2c; --red:#e0785a;
+  --serif:'Fraunces', Georgia, serif; --sans:'Libre Franklin', system-ui, sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--night);color:var(--cream);font:400 17px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:var(--amber)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.eyebrow{font:500 12px/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+
+/* header */
+.top{position:absolute;inset:0 0 auto 0;z-index:5;display:flex;justify-content:space-between;align-items:center;padding:20px}
+.mark{font:500 12px/1.2 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--cream);text-decoration:none}
+.top nav a{font:500 12px/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--cream);text-decoration:none;margin-left:22px}
+.top nav a:hover{color:var(--amber)}
+
+/* hero */
+[hidden]{display:none !important}
+.hero{position:relative;display:flex;flex-direction:column}
+.hero .photo{position:relative;height:66svh;min-height:420px;overflow:hidden}
+.hero .photo img{width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+.hero .photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,15,18,.6) 0%,rgba(14,15,18,0) 20%,rgba(14,15,18,0) 70%,var(--night) 100%)}
+.hero .inner{position:relative;z-index:2;padding:0 20px 56px;margin-top:-28px}
+.hero h1{font:300 clamp(48px,7.4vw,104px)/.95 var(--serif);letter-spacing:-.02em;margin:0 0 18px;max-width:11ch;font-variation-settings:"opsz" 144}
+.hero h1 em{color:var(--amber);font-style:italic}
+.hero p{margin:0 0 26px;max-width:34ch;color:#d9ccb2;font-size:18px}
+.cta-row{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+@media(min-width:900px){
+  .hero{display:grid;grid-template-columns:1fr 1fr;min-height:100svh}
+  .hero .inner{order:1;align-self:center;margin:0;padding:120px 56px 80px max(56px,calc((100vw - 1120px)/2 + 20px))}
+  .hero .photo{order:2;height:auto;min-height:100svh}
+  .hero .photo::after{background:linear-gradient(90deg,var(--night) 0%,rgba(14,15,18,0) 22%)}
+}
+@media(max-width:520px){.mark{font-size:10px;letter-spacing:.16em;max-width:15ch}.top nav a{font-size:11px;letter-spacing:.16em;margin-left:16px}}
+.price{font:400 44px/1 var(--serif)}
+.price small{font:500 13px var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-left:8px}
+.btn{display:inline-block;border:1px solid var(--amber);color:var(--amber);background:transparent;padding:14px 22px;font:600 13px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:background .2s,color .2s}
+.btn:hover,.btn:focus-visible{background:var(--amber);color:var(--night)}
+.btn.solid{background:var(--amber);color:var(--night)}
+.btn.solid:hover{background:var(--cream);border-color:var(--cream)}
+.btn[disabled]{opacity:.4;cursor:not-allowed;background:transparent;color:var(--amber)}
+
+/* story */
+section{padding:84px 0}
+.story{display:grid;gap:48px}
+.story .lede{font:300 clamp(26px,3.6vw,38px)/1.25 var(--serif);margin:16px 0 0}
+.story .lede em{color:var(--amber)}
+.ledger{border-top:1px solid var(--cream);align-self:start}
+.ledger div{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--rule);font-size:15px}
+.ledger dt{color:var(--muted);letter-spacing:.06em}
+.ledger dd{margin:0;text-align:right}
+.ledger dl{margin:0}
+@media(min-width:860px){.story{grid-template-columns:1.25fr 1fr;gap:80px}}
+
+/* order */
+.order{background:var(--night-2);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.order h2,.faq h2{font:300 clamp(36px,5vw,56px)/1 var(--serif);margin:14px 0 10px;letter-spacing:-.01em}
+.order .intro{color:var(--muted);max-width:52ch;margin:0 0 36px}
+.order-grid{display:grid;gap:40px}
+@media(min-width:900px){.order-grid{grid-template-columns:1.3fr 1fr;gap:64px}}
+fieldset{border:0;padding:0;margin:0 0 28px}
+legend{font:500 12px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;padding:0}
+label{display:block;font-size:14px;color:var(--muted);margin:0 0 6px}
+input[type=text],input[type=tel],input[type=email],textarea{width:100%;background:transparent;border:0;border-bottom:1px solid #4a4741;color:var(--cream);font:400 18px/1.4 var(--sans);padding:8px 0 10px;border-radius:0;outline:none}
+input:focus,textarea:focus,select:focus{border-bottom-color:var(--amber)}
+select{width:100%;background:transparent;border:0;border-bottom:1px solid #4a4741;color:var(--cream);font:400 18px/1.4 var(--sans);padding:8px 0 10px;border-radius:0;outline:none;appearance:none;-webkit-appearance:none;cursor:pointer;background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),linear-gradient(135deg,var(--muted) 50%,transparent 50%);background-position:calc(100% - 14px) 55%,calc(100% - 8px) 55%;background-size:6px 6px;background-repeat:no-repeat}
+select option{color:#111;background:#fff}
+textarea{resize:vertical;min-height:44px}
+.field{margin-bottom:22px}
+.two{display:grid;gap:0 24px}
+@media(min-width:600px){.two{grid-template-columns:1fr 1fr}}
+
+.qty{display:flex;align-items:center;border:1px solid #4a4741;width:max-content}
+.qty button{background:none;border:0;color:var(--cream);font:400 26px/1 var(--serif);width:52px;height:52px;cursor:pointer}
+.qty button:hover{color:var(--amber)}
+.qty output{min-width:56px;text-align:center;font:400 28px/1 var(--serif)}
+
+.choice{display:grid;gap:10px}
+@media(min-width:600px){.choice{grid-template-columns:1fr 1fr}}
+.choice label{position:relative;margin:0;border:1px solid #4a4741;padding:16px 18px;cursor:pointer;color:var(--cream);font-size:16px}
+.choice label span{display:block;color:var(--muted);font-size:13px;margin-top:2px}
+.choice input{position:absolute;opacity:0}
+.choice label:has(input:checked){border-color:var(--amber);box-shadow:inset 0 0 0 1px var(--amber)}
+.choice label:has(input:focus-visible){outline:2px solid var(--amber);outline-offset:2px}
+
+.zipnote{font-size:14px;margin:8px 0 0;min-height:1.4em}
+.zipnote.ok{color:#a8d49a}.zipnote.no{color:var(--red)}
+.hidden{display:none !important}
+
+.summary{border:1px solid var(--rule);padding:26px 24px;align-self:start;position:sticky;top:20px}
+.summary h3{font:400 24px/1 var(--serif);margin:0 0 18px}
+.line{display:flex;justify-content:space-between;padding:8px 0;font-size:15px;color:#d9ccb2}
+.line.total{border-top:1px solid var(--cream);margin-top:10px;padding-top:16px;color:var(--cream);font:400 28px/1 var(--serif)}
+.summary .fine{font-size:13px;color:var(--muted);margin:16px 0 20px}
+.summary .btn{width:100%;padding:17px}
+.err{color:var(--red);font-size:14px;margin:12px 0 0}
+
+/* confirmation */
+.done{max-width:640px}
+.done h2{color:var(--amber)}
+.pay{display:grid;gap:24px;align-items:center;margin:28px 0;border:1px solid var(--rule);padding:24px}
+@media(min-width:600px){.pay{grid-template-columns:180px 1fr}}
+.pay img{width:180px;height:180px}
+.pay .amt{font:400 40px/1 var(--serif);margin:6px 0 14px}
+
+/* wire colors + gallery */
+.ph{aspect-ratio:4/3;border:1px dashed #4a4741;display:flex;align-items:center;justify-content:center;text-align:center;padding:12px;color:var(--muted);font:500 12px/1.4 var(--sans);letter-spacing:.18em;text-transform:uppercase}
+.compare-grid{display:grid;gap:24px;margin-top:28px}
+@media(min-width:700px){.compare-grid{grid-template-columns:1fr 1fr}}
+.compare figure{margin:0}
+.compare figcaption{margin-top:12px;color:#d9ccb2}
+.compare figcaption strong{color:var(--cream);font-weight:600}
+.gallery-grid{display:grid;gap:12px;margin-top:28px;grid-template-columns:1fr 1fr}
+@media(min-width:800px){.gallery-grid{grid-template-columns:repeat(3,1fr)}}
+.order h2,.faq h2,.compare h2,.gallery h2{font:300 clamp(36px,5vw,56px)/1 var(--serif);margin:14px 0 10px;letter-spacing:-.01em}
+
+/* faq */
+.faq-list{border-top:1px solid var(--cream);margin-top:28px;max-width:760px}
+details{border-bottom:1px solid var(--rule)}
+summary{list-style:none;cursor:pointer;padding:20px 32px 20px 0;font:400 21px/1.3 var(--serif);position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:4px;top:18px;font:300 26px var(--serif);color:var(--amber);transition:transform .2s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{margin:0 0 22px;color:#d9ccb2;max-width:60ch}
+
+footer{padding:48px 0 60px;border-top:1px solid var(--rule);color:var(--muted);font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px}
+footer a{color:var(--cream);text-decoration:none}
+footer a:hover{color:var(--amber)}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <a class="mark" href="#">GravesWalkerLights &amp; Co.</a>
+  <nav><a href="#story">About</a><a href="#gallery">Gallery</a><a href="#order">Order</a></nav>
+</header>
+
+<div class="hero">
+  <div class="photo"><img src="img/hero.jpg" srcset="img/hero-sm.jpg 1000w, img/hero.jpg 1972w" sizes="(min-width:900px) 50vw, 100vw" alt="Three glowing steel light balls hanging in a backyard tree at dusk"></div>
+  <div class="inner">
+    <h1>Light up the trees this year.</h1>
+    <p>Hand-built galvanized steel light balls, made in Raleigh.</p>
+    <div class="cta-row">
+      <span class="price">$25<small>each + tax</small></span>
+      <a class="btn" href="#order">Purchase yours</a>
+    </div>
+  </div>
+</div>
+
+<section id="story">
+  <div class="wrap story">
+    <div>
+      <p class="eyebrow">Why steel</p>
+      <p class="lede">Our mom&rsquo;s grapevine light balls rotted out after a few seasons, so we built her a set from 12-gauge galvanized steel, the same wire used to build fences. Steel doesn&rsquo;t rot, and every ring is bent and crimped by hand.</p>
+    </div>
+    <div class="ledger">
+      <dl>
+        <div><dt>Frame</dt><dd>12-gauge galvanized steel</dd></div>
+        <div><dt>Size</dt><dd>About 12 inches across</dd></div>
+        <div><dt>Lights</dt><dd>100 warm-white mini lights on a 21-ft green or white strand</dd></div>
+        <div><dt>Made</dt><dd>Raleigh, North Carolina</dd></div>
+        <div><dt>Price</dt><dd>$25 each, plus tax</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section id="colors" class="compare">
+  <div class="wrap">
+    <p class="eyebrow">Wire color</p>
+    <h2>Green or white</h2>
+    <div class="compare-grid">
+      <figure><div class="ph">Photo coming soon<br>Green wire</div><figcaption><strong>Green wire</strong> blends into the branches, so you mostly see the lights.</figcaption></figure>
+      <figure><div class="ph">Photo coming soon<br>White wire</div><figcaption><strong>White wire</strong> shows the shape of the ball, day and night.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="gallery" class="gallery">
+  <div class="wrap">
+    <p class="eyebrow">Gallery</p>
+    <h2>See them lit</h2>
+    <div class="gallery-grid">
+      <div class="ph">Photo coming soon</div><div class="ph">Photo coming soon</div><div class="ph">Photo coming soon</div>
+      <div class="ph">Photo coming soon</div><div class="ph">Photo coming soon</div><div class="ph">Photo coming soon</div>
+    </div>
+  </div>
+</section>
+
+<section id="order" class="order">
+  <div class="wrap">
+    <div id="order-form-wrap">
+      <p class="eyebrow">Order</p>
+      <h2>Purchase your lights</h2>
+      <p class="intro">Tell us how many you want and how you&rsquo;d like to get them. Every order is ready for pickup or delivered within 10 days.</p>
+
+      <form id="order-form" name="order" method="POST" data-netlify="true" netlify-honeypot="company" novalidate>
+        <input type="hidden" name="form-name" value="order">
+        <p class="hidden"><label>Leave this empty <input name="company"></label></p>
+        <input type="hidden" name="order_total" id="f-total">
+        <input type="hidden" name="order_breakdown" id="f-breakdown">
+        <input type="hidden" name="payment_status" id="f-paystatus" value="Sent to card checkout">
+
+        <div class="order-grid">
+          <div>
+            <fieldset>
+              <legend>How many</legend>
+              <div class="qty">
+                <button type="button" id="minus" aria-label="One fewer">&minus;</button>
+                <output id="qty-out" aria-live="polite">1</output>
+                <button type="button" id="plus" aria-label="One more">+</button>
+              </div>
+              <input type="hidden" name="quantity" id="f-qty" value="1">
+            </fieldset>
+
+            <fieldset>
+              <legend>Wire color</legend>
+              <div class="choice">
+                <label><input type="radio" name="wire_color" value="Green" checked>Green wire<span>Blends into the tree</span></label>
+                <label><input type="radio" name="wire_color" value="White">White wire<span>Stands out on bare branches</span></label>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>Pickup or delivery</legend>
+              <div class="choice">
+                <label><input type="radio" name="fulfillment" value="Pickup" checked>Pickup<span>Free, in Raleigh</span></label>
+                <label><input type="radio" name="fulfillment" value="Delivery">Delivery<span>$13.99 per order. Enter your ZIP to check.</span></label>
+              </div>
+            </fieldset>
+
+            <fieldset id="delivery-fields" class="hidden">
+              <legend>Delivery address</legend>
+              <div class="two">
+                <div class="field"><label for="zip">ZIP code</label><input type="text" id="zip" name="zip" inputmode="numeric" maxlength="5" autocomplete="postal-code"></div>
+                <div class="field"><label for="city">City</label><input type="text" id="city" name="city" autocomplete="address-level2"></div>
+              </div>
+              <p class="zipnote" id="zipnote" aria-live="polite"></p>
+              <div class="field"><label for="street">Street address</label><input type="text" id="street" name="street" autocomplete="street-address"></div>
+              <div class="field"><label for="delivery_notes">Delivery notes (optional)</label><input type="text" id="delivery_notes" name="delivery_notes" placeholder="e.g., gate code, leave on the porch"></div>
+            </fieldset>
+
+            <fieldset>
+              <legend>Your info</legend>
+              <div class="field"><label for="name">Name</label><input type="text" id="name" name="name" autocomplete="name" required></div>
+              <div class="two">
+                <div class="field"><label for="phone">Phone</label><input type="tel" id="phone" name="phone" autocomplete="tel" required></div>
+                <div class="field"><label for="email">Email (optional)</label><input type="email" id="email" name="email" autocomplete="email"></div>
+              </div>
+              <div class="field"><label for="referral">How did you hear about us?</label>
+                <select id="referral" name="referral" required>
+                  <option value="" selected disabled>Choose one</option>
+                  <option>Our Instagram (@PLACEHOLDER)</option>
+                  <option>Other social media</option>
+                  <option>Word of mouth</option>
+                  <option>Google search</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="field hidden" id="referral-other-wrap"><label for="referral_other">Where did you hear about us?</label><input type="text" id="referral_other" name="referral_other" maxlength="120"></div>
+            </fieldset>
+
+            <div class="field"><label for="notes">Notes (optional)</label><textarea id="notes" name="notes" rows="2"></textarea></div>
+          </div>
+
+          <aside class="summary" aria-label="Order summary">
+            <h3>Your order</h3>
+            <div class="line"><span id="s-balls">1 ball &times; $25.00</span><span id="s-sub">$25.00</span></div>
+            <div class="line" id="s-del-row" hidden><span>Delivery</span><span>$13.99</span></div>
+            <div class="line"><span id="s-tax-label">Sales tax (7.25%)</span><span id="s-tax">$1.81</span></div>
+            <div class="line total"><span>Total</span><span id="s-total">$26.81</span></div>
+            <p class="fine">You&rsquo;ll pay by card on the next screen.</p>
+            <button class="btn solid" type="submit" id="submit">Continue to payment</button>
+            <p class="err" id="err" role="alert"></p>
+          </aside>
+        </div>
+      </form>
+    </div>
+
+    <div id="done" class="done hidden" tabindex="-1">
+      <p class="eyebrow" id="done-eyebrow">Order received</p>
+      <h2>Thank you!</h2>
+      <p id="done-msg"></p>
+      <div class="pay hidden" id="pay-venmo">
+        <img src="img/venmo-qr.svg" alt="Venmo QR code for @LightedBalls">
+        <div>
+          <p class="eyebrow">Card checkout is down. Pay on Venmo</p>
+          <p class="amt" id="pay-amt">$26.81</p>
+          <a class="btn" href="https://venmo.com/u/LightedBalls" target="_blank" rel="noopener">Open Venmo &rarr;</a>
+          <p class="fine" style="color:var(--muted);font-size:14px;margin:14px 0 0">Send to <strong>@LightedBalls</strong> and put your name in the note.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="wrap">
+    <p class="eyebrow">Questions</p>
+    <h2>Good to know</h2>
+    <div class="faq-list">
+      <details><summary>Can they stay outside all season?</summary><p>The frame is galvanized steel, so it won&rsquo;t rot the way grapevine does. Plug them in with an outdoor-rated extension cord.</p></details>
+      <details><summary>How long is the cord?</summary><p>Each ball is wrapped in one 21-foot strand with 100 lights. You&rsquo;ll need an extension cord to reach an outlet.</p></details>
+      <details><summary>How do I hang them?</summary><p>Most people loop a hook or a bit of wire over a sturdy branch and run an outdoor extension cord to the plug. Hang a few at different heights for the best look.</p></details>
+      <details><summary>How soon will I get them?</summary><p>Every order is ready for pickup or delivered within 10 days.</p></details>
+      <details><summary>Where do you deliver?</summary><p>Most of Raleigh and the towns around it. Enter your ZIP code in the order form and it&rsquo;ll tell you right away. Delivery is $13.99 per order, no matter how many you buy. Pickup in Raleigh is always free.</p></details>
+      <details id="returns"><summary>What&rsquo;s your return policy?</summary><p>You can return your lights within 1 year of purchase. If a ball is defective, we&rsquo;ll swap it for a new one within 3 months of delivery. Call or text us to start a return or swap.</p></details>
+      <details><summary>Questions or a big order?</summary><p>Call or text <a href="tel:+19842840159">984-284-0159</a>.</p></details>
+      <details id="privacy"><summary>Privacy policy</summary><p>When you order, we collect your name, phone number, email (if you give it), delivery address (for delivery orders), how you heard about us, and your order details. We use this only to fill your order, contact you about it, and keep our business and tax records. Card payments are handled by Stripe, so we never see or store your card number. We don&rsquo;t sell or share your information with anyone else, except our payment and website providers (Stripe and Netlify) as needed to process your order, or when the law requires it. To see, correct or delete your information, email <a href="mailto:GravesWalkerLights@gmail.com">GravesWalkerLights@gmail.com</a> or call <a href="tel:+19842840159">984-284-0159</a>. Last updated November 15, 2026.</p></details>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>GravesWalkerLights &amp; Co. &middot; Raleigh, NC</span>
+    <span><a href="tel:+19842840159">984-284-0159</a> &middot; <a href="mailto:GravesWalkerLights@gmail.com">GravesWalkerLights@gmail.com</a> &middot; <a href="#returns" onclick="document.getElementById('returns').open=true">Return policy</a> &middot; <a href="#privacy" onclick="document.getElementById('privacy').open=true">Privacy</a></span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var PRICE_C=2500, DEL_C=1399, WAKE_BP=725;
+  // ZIPs with any part within a 25-minute drive of us. [city, sales tax rate in hundredths of a percent]
+  var ZIPS={
+    "27601":["Raleigh",725],"27603":["Raleigh",725],"27604":["Raleigh",725],"27605":["Raleigh",725],"27606":["Raleigh",725],
+    "27607":["Raleigh",725],"27608":["Raleigh",725],"27609":["Raleigh",725],"27610":["Raleigh",725],"27612":["Raleigh",725],
+    "27613":["Raleigh",725],"27614":["Raleigh",725],"27615":["Raleigh",725],"27616":["Raleigh",725],"27617":["Raleigh",725],
+    "27511":["Cary",725],"27513":["Cary",725],"27518":["Cary",725],"27502":["Apex",725],"27539":["Apex",725],
+    "27529":["Garner",725],"27545":["Knightdale",725],"27560":["Morrisville",725],"27571":["Rolesville",725]
+  };
+  var f=document.getElementById('order-form'), qty=1;
+  var $=function(id){return document.getElementById(id)};
+  var money=function(c){return '$'+(c/100).toFixed(2)};
+  // NC G.S. 105-164.10(b): tax figured per item, carried to the third decimal, rounded up when it's 5 or more
+  function taxC(cents,bp){return Math.round(Math.floor(cents*bp/1000)/10);}
+
+  function isDelivery(){return f.fulfillment.value==='Delivery'}
+  function zip(){return $('zip').value.trim()}
+  function zipOK(){return Object.prototype.hasOwnProperty.call(ZIPS,zip())}
+  function rate(){return isDelivery()&&zipOK()?ZIPS[zip()][1]:WAKE_BP}
+
+  function totals(){
+    var bp=rate(), sub=qty*PRICE_C, del=isDelivery()?DEL_C:0;
+    var tax=qty*taxC(PRICE_C,bp)+(del?taxC(del,bp):0);
+    return {bp:bp,sub:sub,del:del,tax:tax,total:sub+del+tax};
+  }
+  function render(){
+    var t=totals();
+    $('qty-out').textContent=qty; $('f-qty').value=qty;
+    $('s-balls').textContent=qty+(qty===1?' ball':' balls')+' \u00d7 $25.00';
+    $('s-sub').textContent=money(t.sub);
+    $('s-del-row').hidden=!isDelivery();
+    $('s-tax-label').textContent='Sales tax ('+(t.bp/100)+'%)';
+    $('s-tax').textContent=money(t.tax);
+    $('s-total').textContent=money(t.total);
+    $('delivery-fields').classList.toggle('hidden',!isDelivery());
+    $('referral-other-wrap').classList.toggle('hidden',$('referral').value!=='Other');
+    var z=zip(), note=$('zipnote');
+    if(isDelivery() && z.length===5){
+      if(zipOK()){note.textContent='Good news, we deliver to '+z+'.';note.className='zipnote ok';if(!$('city').value)$('city').value=ZIPS[z][0];}
+      else{note.textContent='Sorry, '+z+' is outside our delivery area. Pickup is free!';note.className='zipnote no';}
+    } else {note.textContent='';note.className='zipnote';}
+    $('submit').disabled=isDelivery() && z.length===5 && !zipOK();
+    $('f-total').value=money(t.total);
+    $('f-breakdown').value=qty+' x $25.00 = '+money(t.sub)+(t.del?' | delivery $13.99':'')+' | tax '+money(t.tax)+' ('+(t.bp/100)+'%) | total '+money(t.total);
+  }
+  $('minus').onclick=function(){if(qty>1){qty--;render();}};
+  $('plus').onclick=function(){if(qty<50){qty++;render();}};
+  f.addEventListener('change',render);
+  $('zip').addEventListener('input',function(){this.value=this.value.replace(/\D/g,'').slice(0,5);render();});
+
+  function nextSteps(pickup){
+    return pickup?'You\u2019ll get a text with the pickup location and time. Your order will be ready within 10 days.'
+                 :'We\u2019ll text you to set a delivery time. Your order will arrive within 10 days.';
+  }
+  function showDone(paid,pickup){
+    var t=totals();
+    $('done-eyebrow').textContent=paid?'Payment received':'Order received';
+    $('done-msg').textContent=paid?nextSteps(pickup):'Your total is '+money(t.total)+'. '+nextSteps(pickup);
+    $('pay-amt').textContent=money(t.total);
+    $('pay-venmo').classList.toggle('hidden',paid);
+    $('order-form-wrap').classList.add('hidden'); var d=$('done'); d.classList.remove('hidden'); d.focus();
+    d.scrollIntoView({behavior:'smooth',block:'start'});
+  }
+  function fail(btn){btn.disabled=false;btn.textContent='Continue to payment';$('err').innerHTML='That didn\u2019t go through. Please text your order to <a href="tel:+19842840159">984-284-0159</a>.';}
+
+  f.addEventListener('submit',function(e){
+    e.preventDefault(); $('err').textContent='';
+    var missing=[];
+    if(!$('name').value.trim())missing.push('your name');
+    if($('phone').value.replace(/\D/g,'').length<10)missing.push('a phone number');
+    if(!$('referral').value)missing.push('how you heard about us');
+    else if($('referral').value==='Other'&&!$('referral_other').value.trim())missing.push('where you heard about us');
+    if(isDelivery()){
+      if(!zipOK())missing.push('a ZIP in our delivery area');
+      if(!$('street').value.trim())missing.push('a street address');
+    }
+    if(missing.length){$('err').textContent='Please add '+missing.join(', ')+'.';return;}
+    render();
+    var btn=$('submit'); btn.disabled=true; btn.textContent='Sending\u2026';
+    var data=Object.fromEntries(new FormData(f));
+    fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(new FormData(f)).toString()})
+      .then(function(r){if(!r.ok)throw new Error(r.status);
+        return fetch('/api/checkout',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)})
+          .then(function(r2){return r2.ok?r2.json():null;}).catch(function(){return null;})
+          .then(function(j){ if(j&&j.url){window.location.href=j.url;} else {showDone(false,!isDelivery());} });
+      })
+      .catch(function(){fail(btn);});
+  });
+
+  var q=new URLSearchParams(location.search);
+  if(q.get('paid')==='1'){showDone(true,q.get('f')!=='Delivery');}
+  else if(q.get('canceled')==='1'){$('err').textContent='Your payment was canceled, so your order isn\u2019t complete. You can try again here.';setTimeout(function(){$('order').scrollIntoView();},300);}
+  render();
+})();
+</script>
+</body>
+</html>
