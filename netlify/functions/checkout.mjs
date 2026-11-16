@@ -40,7 +40,7 @@ export default async (req) => {
   const site = new URL(req.url).origin;
   const p = new URLSearchParams();
   p.set("mode", "payment");
-  p.set("success_url", `${site}/?paid=1&f=${delivery ? "Delivery" : "Pickup"}#order`);
+  p.set("success_url", `${site}/?paid=1&f=${delivery ? "Delivery" : "Pickup"}&session_id={CHECKOUT_SESSION_ID}#order`);
   p.set("cancel_url", `${site}/?canceled=1#order`);
   let i = 0;
   const item = (name, cents, q) => {
@@ -77,7 +77,7 @@ export default async (req) => {
   });
   const s = await r.json();
   if (!r.ok) { console.error("Stripe error", s?.error?.message); return json({ error: "stripe_error" }, 502); }
-  return json({ url: s.url });
+  return json({ url: s.url, id: s.id });
 };
 
 export const config = { path: "/api/checkout" };

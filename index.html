@@ -227,7 +227,7 @@ footer a:hover{color:var(--amber)}
         <p class="hidden"><label>Leave this empty <input name="company"></label></p>
         <input type="hidden" name="order_total" id="f-total">
         <input type="hidden" name="order_breakdown" id="f-breakdown">
-        <input type="hidden" name="payment_status" id="f-paystatus" value="Sent to card checkout">
+        <input type="hidden" name="payment_status" id="f-paystatus" value="Pending">
 
         <div class="order-grid">
           <div>
@@ -429,17 +429,41 @@ footer a:hover{color:var(--amber)}
     render();
     var btn=$('submit'); btn.disabled=true; btn.textContent='Sending\u2026';
     var data=Object.fromEntries(new FormData(f));
-    fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(new FormData(f)).toString()})
-      .then(function(r){if(!r.ok)throw new Error(r.status);
-        return fetch('/api/checkout',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)})
-          .then(function(r2){return r2.ok?r2.json():null;}).catch(function(){return null;})
-          .then(function(j){ if(j&&j.url){window.location.href=j.url;} else {showDone(false,!isDelivery());} });
-      })
-      .catch(function(){fail(btn);});
+    function postForm(status){
+      var fd=new FormData(f); if(status)fd.set('payment_status',status);
+      return fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(fd).toString()})
+        .then(function(r){if(!r.ok)throw new Error(r.status);});
+    }
+    fetch('/api/checkout',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)})
+      .then(function(r2){return r2.ok?r2.json():null;}).catch(function(){return null;})
+      .then(function(j){
+        if(j&&j.url){
+          try{localStorage.setItem('gwl_pending',JSON.stringify({id:j.id,form:new URLSearchParams(new FormData(f)).toString()}));}catch(err){}
+          window.location.href=j.url;
+        } else {
+          postForm('NOT PAID - card checkout unavailable, customer shown Venmo').then(function(){showDone(false,!isDelivery());}).catch(function(){fail(btn);});
+        }
+      });
   });
 
+  function sendPaidOrder(sid){
+    var done='gwl_sent_'+sid;
+    try{if(localStorage.getItem(done))return;}catch(err){}
+    fetch('/api/confirm?session_id='+encodeURIComponent(sid)).then(function(r){return r.ok?r.json():null;}).then(function(c){
+      if(!c||!c.paid)return;
+      var body,pend=null;
+      try{pend=JSON.parse(localStorage.getItem('gwl_pending')||'null');}catch(err){}
+      if(pend&&pend.id===sid){body=new URLSearchParams(pend.form);}
+      else{body=new URLSearchParams();body.set('form-name','order');var m=c.metadata||{};Object.keys(m).forEach(function(k){body.set(k,m[k]);});if(c.email)body.set('email',c.email);}
+      body.set('payment_status','PAID by card: $'+(c.amount_total/100).toFixed(2)+' (Stripe)');
+      fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:body.toString()}).then(function(r){
+        if(r.ok){try{localStorage.setItem(done,'1');localStorage.removeItem('gwl_pending');}catch(err){}}
+      });
+    }).catch(function(){});
+  }
+
   var q=new URLSearchParams(location.search);
-  if(q.get('paid')==='1'){showDone(true,q.get('f')!=='Delivery');}
+  if(q.get('paid')==='1'){showDone(true,q.get('f')!=='Delivery');if(q.get('session_id'))sendPaidOrder(q.get('session_id'));}
   else if(q.get('canceled')==='1'){$('err').textContent='Your payment was canceled, so your order isn\u2019t complete. You can try again here.';setTimeout(function(){$('order').scrollIntoView();},300);}
   render();
 })();
