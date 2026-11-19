@@ -18,12 +18,13 @@
 <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/img/icon-96.png" type="image/png" sizes="96x96">
 <link rel="icon" href="/img/icon-192.png" type="image/png" sizes="192x192">
+<link rel="icon" href="/img/icon-512.png" type="image/png" sizes="512x512">
 <link rel="apple-touch-icon" href="/img/icon-180.png">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","name":"GravesWalkerLights & Co.","alternateName":["GravesWalkerLights","Graves Walker Lights"],"url":"https://graveswalkerlights.netlify.app/"}
+{"@context":"https://schema.org","@type":"WebSite","name":"GravesWalkerLights & Co.","image":"https://graveswalkerlights.netlify.app/img/icon-512.png","alternateName":["GravesWalkerLights","Graves Walker Lights"],"url":"https://graveswalkerlights.netlify.app/"}
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"LocalBusiness","name":"GravesWalkerLights & Co.","description":"Hand-built galvanized steel lighted Christmas balls, made in Raleigh, NC.","url":"https://graveswalkerlights.netlify.app/","telephone":"+1-984-284-0159","email":"GravesWalkerLights@gmail.com","image":"https://graveswalkerlights.netlify.app/img/hero-sm.jpg","priceRange":"$25","areaServed":{"@type":"City","name":"Raleigh, NC"},"address":{"@type":"PostalAddress","addressLocality":"Raleigh","addressRegion":"NC","addressCountry":"US"}}
+{"@context":"https://schema.org","@type":"LocalBusiness","name":"GravesWalkerLights & Co.","description":"Hand-built galvanized steel lighted Christmas balls, made in Raleigh, NC.","url":"https://graveswalkerlights.netlify.app/","telephone":"+1-984-284-0159","email":"GravesWalkerLights@gmail.com","logo":"https://graveswalkerlights.netlify.app/img/icon-512.png","image":["https://graveswalkerlights.netlify.app/img/icon-512.png","https://graveswalkerlights.netlify.app/img/hero-sm.jpg"],"sameAs":["https://www.instagram.com/graveswalkerlights/"],"priceRange":"$25","areaServed":{"@type":"City","name":"Raleigh, NC"},"address":{"@type":"PostalAddress","addressLocality":"Raleigh","addressRegion":"NC","addressCountry":"US"}}
 </script>
 <meta name="theme-color" content="#0e0f12">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -45,7 +46,8 @@ a{color:var(--amber)}
 
 /* header */
 .top{position:absolute;inset:0 0 auto 0;z-index:5;display:flex;justify-content:space-between;align-items:center;padding:20px}
-.mark{font:500 12px/1.2 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--cream);text-decoration:none}
+.mark{font:500 12px/1.2 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--cream);text-decoration:none;display:flex;align-items:center;gap:10px}
+.mark img{width:40px;height:40px;flex:none}
 .top nav a{font:500 12px/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--cream);text-decoration:none;margin-left:22px}
 .top nav a:hover{color:var(--amber)}
 
@@ -145,6 +147,8 @@ textarea{resize:vertical;min-height:44px}
 .compare-grid{display:grid;gap:24px;margin-top:28px}
 @media(min-width:700px){.compare-grid{grid-template-columns:1fr 1fr}}
 .compare figure{margin:0}
+.shot{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;background:#16171b}
+.choice label b{font-weight:400}
 .compare figcaption{margin-top:12px;color:#d9ccb2}
 .compare figcaption strong{color:var(--cream);font-weight:600}
 .gallery-grid{display:grid;gap:12px;margin-top:28px;grid-template-columns:1fr 1fr}
@@ -169,7 +173,7 @@ footer a:hover{color:var(--amber)}
 <body>
 
 <header class="top">
-  <a class="mark" href="#">GravesWalkerLights &amp; Co.</a>
+  <a class="mark" href="#"><img src="img/icon-mark.svg" alt="" width="40" height="40">GravesWalkerLights &amp; Co.</a>
   <nav><a href="#story">About</a><a href="#gallery">Gallery</a><a href="#order">Order</a></nav>
 </header>
 
@@ -208,8 +212,8 @@ footer a:hover{color:var(--amber)}
     <p class="eyebrow">Wire color</p>
     <h2>Green or white</h2>
     <div class="compare-grid">
-      <figure><div class="ph">Photo coming soon<br>Green wire</div><figcaption><strong>Green wire</strong> blends into the branches, so you mostly see the lights.</figcaption></figure>
-      <figure><div class="ph">Photo coming soon<br>White wire</div><figcaption><strong>White wire</strong> shows the shape of the ball, day and night.</figcaption></figure>
+      <figure><img class="shot" src="img/photos/wire-green-sm.jpg" srcset="img/photos/wire-green-sm.jpg 600w, img/photos/wire-green.jpg 1200w" sizes="(min-width:800px) 33vw, 50vw" alt="Three lighted balls wrapped in green-wire lights" loading="lazy"><figcaption><strong>Green wire</strong> blends into the branches, so you mostly see the lights.</figcaption></figure>
+      <figure><img class="shot" src="img/photos/wire-white-sm.jpg" srcset="img/photos/wire-white-sm.jpg 600w, img/photos/wire-white.jpg 1200w" sizes="(min-width:800px) 33vw, 50vw" alt="Three lighted balls wrapped in white-wire lights" loading="lazy"><figcaption><strong>White wire</strong> shows the shape of the ball, day and night.</figcaption></figure>
     </div>
   </div>
 </section>
@@ -219,8 +223,12 @@ footer a:hover{color:var(--amber)}
     <p class="eyebrow">Gallery</p>
     <h2>See them lit</h2>
     <div class="gallery-grid">
-      <div class="ph">Photo coming soon</div><div class="ph">Photo coming soon</div><div class="ph">Photo coming soon</div>
-      <div class="ph">Photo coming soon</div><div class="ph">Photo coming soon</div><div class="ph">Photo coming soon</div>
+      <img class="shot" src="img/photos/g1-sm.jpg" srcset="img/photos/g1-sm.jpg 600w, img/photos/g1.jpg 1200w" sizes="(min-width:800px) 33vw, 50vw" alt="Lighted steel balls glowing on the grass at night" loading="lazy">
+      <img class="shot" src="img/photos/g2-sm.jpg" srcset="img/photos/g2-sm.jpg 600w, img/photos/g2.jpg 1200w" sizes="(min-width:800px) 33vw, 50vw" alt="Six lighted balls, green and white wire, stacked together" loading="lazy">
+      <img class="shot" src="img/photos/g3-sm.jpg" srcset="img/photos/g3-sm.jpg 600w, img/photos/g3.jpg 1200w" sizes="(min-width:800px) 33vw, 50vw" alt="One white-wire lighted ball on a wood floor" loading="lazy">
+      <img class="shot" src="img/photos/g4-sm.jpg" srcset="img/photos/g4-sm.jpg 600w, img/photos/g4.jpg 1200w" sizes="(min-width:800px) 33vw, 50vw" alt="Close-up of the lights wrapped around the steel rings" loading="lazy">
+      <img class="shot" src="img/photos/g5-sm.jpg" srcset="img/photos/g5-sm.jpg 600w, img/photos/g5.jpg 1200w" sizes="(min-width:800px) 33vw, 50vw" alt="One green-wire lighted ball against a wall" loading="lazy">
+      <img class="shot" src="img/photos/g6-sm.jpg" srcset="img/photos/g6-sm.jpg 600w, img/photos/g6.jpg 1200w" sizes="(min-width:800px) 33vw, 50vw" alt="Three white-wire lighted balls glowing warm" loading="lazy">
     </div>
   </div>
 </section>
@@ -279,6 +287,14 @@ footer a:hover{color:var(--amber)}
             </fieldset>
 
             <fieldset>
+              <legend>When to pay</legend>
+              <div class="choice">
+                <label><input type="radio" name="pay_when" value="Pay now" checked>Pay now<span>By card on the next screen</span></label>
+                <label><input type="radio" name="pay_when" value="Pay at pickup/delivery"><b id="paylater-title">Pay at pickup</b><span>Cash, Venmo or card in person</span></label>
+              </div>
+            </fieldset>
+
+            <fieldset>
               <legend>Your info</legend>
               <div class="field"><label for="name">Name</label><input type="text" id="name" name="name" autocomplete="name" required></div>
               <div class="two">
@@ -289,6 +305,7 @@ footer a:hover{color:var(--amber)}
                 <select id="referral" name="referral" required>
                   <option value="" selected disabled>Choose one</option>
                   <option>Our Instagram (@graveswalkerlights)</option>
+                  <option>Our Facebook page (GravesWalkerLights &amp; Co.)</option>
                   <option>Other social media</option>
                   <option>Word of mouth</option>
                   <option>Google search</option>
@@ -307,7 +324,7 @@ footer a:hover{color:var(--amber)}
             <div class="line" id="s-del-row" hidden><span>Delivery</span><span>$13.99</span></div>
             <div class="line"><span id="s-tax-label">Sales tax (7.25%)</span><span id="s-tax">$1.81</span></div>
             <div class="line total"><span>Total</span><span id="s-total">$26.81</span></div>
-            <p class="fine">You&rsquo;ll pay by card on the next screen.</p>
+            <p class="fine" id="pay-fine">You&rsquo;ll pay by card on the next screen.</p>
             <button class="btn solid" type="submit" id="submit">Continue to payment</button>
             <p class="err" id="err" role="alert"></p>
           </aside>
@@ -341,6 +358,7 @@ footer a:hover{color:var(--amber)}
       <details><summary>Can they stay outside all season?</summary><p>The frame is galvanized steel, so it won&rsquo;t rot the way grapevine does. Plug them in with an outdoor-rated extension cord.</p></details>
       <details><summary>How long is the cord?</summary><p>Each ball is wrapped in one 21-foot strand with 100 lights. You&rsquo;ll need an extension cord to reach an outlet.</p></details>
       <details><summary>How do I hang them?</summary><p>Most people loop a hook or a bit of wire over a sturdy branch and run an outdoor extension cord to the plug. Hang a few at different heights for the best look.</p></details>
+      <details><summary>How do I pay?</summary><p>Pay by card when you order, or choose to pay at pickup or delivery with cash, Venmo or card.</p></details>
       <details><summary>How soon will I get them?</summary><p>Every order is ready for pickup or delivered within 10 days.</p></details>
       <details><summary>Where do you deliver?</summary><p>Most of Raleigh and the towns around it. Enter your ZIP code in the order form and it&rsquo;ll tell you right away. Delivery is $13.99 per order, no matter how many you buy. Pickup in Raleigh is always free.</p></details>
       <details id="returns"><summary>What&rsquo;s your return policy?</summary><p>You can return your lights within 1 year of purchase. If a ball is defective, we&rsquo;ll swap it for a new one within 3 months of delivery. Call or text us to start a return or swap.</p></details>
@@ -353,7 +371,7 @@ footer a:hover{color:var(--amber)}
 <footer>
   <div class="wrap">
     <span>GravesWalkerLights &amp; Co. &middot; Raleigh, NC</span>
-    <span><a href="tel:+19842840159">984-284-0159</a> &middot; <a href="mailto:GravesWalkerLights@gmail.com">GravesWalkerLights@gmail.com</a> &middot; <a href="#returns" onclick="document.getElementById('returns').open=true">Return policy</a> &middot; <a href="#privacy" onclick="document.getElementById('privacy').open=true">Privacy</a></span>
+    <span><a href="tel:+19842840159">984-284-0159</a> &middot; <a href="mailto:GravesWalkerLights@gmail.com">GravesWalkerLights@gmail.com</a> &middot; <a href="https://www.instagram.com/graveswalkerlights/" target="_blank" rel="noopener">Instagram</a> &middot; <a href="#returns" onclick="document.getElementById('returns').open=true">Return policy</a> &middot; <a href="#privacy" onclick="document.getElementById('privacy').open=true">Privacy</a></span>
   </div>
 </footer>
 
@@ -375,6 +393,7 @@ footer a:hover{color:var(--amber)}
   function taxC(cents,bp){return Math.round(Math.floor(cents*bp/1000)/10);}
 
   function isDelivery(){return f.fulfillment.value==='Delivery'}
+  function payLater(){return f.pay_when.value!=='Pay now'}
   function zip(){return $('zip').value.trim()}
   function zipOK(){return Object.prototype.hasOwnProperty.call(ZIPS,zip())}
   function rate(){return isDelivery()&&zipOK()?ZIPS[zip()][1]:WAKE_BP}
@@ -401,6 +420,9 @@ footer a:hover{color:var(--amber)}
       else{note.textContent='Sorry, '+z+' is outside our delivery area. Pickup is free!';note.className='zipnote no';}
     } else {note.textContent='';note.className='zipnote';}
     $('submit').disabled=isDelivery() && z.length===5 && !zipOK();
+    $('paylater-title').textContent=isDelivery()?'Pay at delivery':'Pay at pickup';
+    $('pay-fine').textContent=payLater()?'Nothing to pay now. You\u2019ll pay '+money(t.total)+(isDelivery()?' when we deliver':' at pickup')+' by cash, Venmo or card.':'You\u2019ll pay by card on the next screen.';
+    if($('submit').textContent!=='Sending\u2026')$('submit').textContent=payLater()?'Place order':'Continue to payment';
     $('f-total').value=money(t.total);
     $('f-breakdown').value=qty+' x $25.00 = '+money(t.sub)+(t.del?' | delivery $13.99':'')+' | tax '+money(t.tax)+' ('+(t.bp/100)+'%) | total '+money(t.total);
   }
@@ -413,16 +435,16 @@ footer a:hover{color:var(--amber)}
     return pickup?'You\u2019ll get a text with the pickup location and time. Your order will be ready within 10 days.'
                  :'We\u2019ll text you to set a delivery time. Your order will arrive within 10 days.';
   }
-  function showDone(paid,pickup){
+  function showDone(paid,pickup,later){
     var t=totals();
     $('done-eyebrow').textContent=paid?'Payment received':'Order received';
-    $('done-msg').textContent=paid?nextSteps(pickup):'Your total is '+money(t.total)+'. '+nextSteps(pickup);
+    $('done-msg').textContent=paid?nextSteps(pickup):later?'Your total is '+money(t.total)+'. You\u2019ll pay '+(pickup?'at pickup':'when we deliver')+' by cash, Venmo or card. '+nextSteps(pickup):'Your total is '+money(t.total)+'. '+nextSteps(pickup);
     $('pay-amt').textContent=money(t.total);
-    $('pay-venmo').classList.toggle('hidden',paid);
+    $('pay-venmo').classList.toggle('hidden',paid||!!later);
     $('order-form-wrap').classList.add('hidden'); var d=$('done'); d.classList.remove('hidden'); d.focus();
     d.scrollIntoView({behavior:'smooth',block:'start'});
   }
-  function fail(btn){btn.disabled=false;btn.textContent='Continue to payment';$('err').innerHTML='That didn\u2019t go through. Please text your order to <a href="tel:+19842840159">984-284-0159</a>.';}
+  function fail(btn){btn.disabled=false;btn.textContent=payLater()?'Place order':'Continue to payment';$('err').innerHTML='That didn\u2019t go through. Please text your order to <a href="tel:+19842840159">984-284-0159</a>.';}
 
   f.addEventListener('submit',function(e){
     e.preventDefault(); $('err').textContent='';
@@ -438,6 +460,10 @@ footer a:hover{color:var(--amber)}
     if(missing.length){$('err').textContent='Please add '+missing.join(', ')+'.';return;}
     render();
     var btn=$('submit'); btn.disabled=true; btn.textContent='Sending\u2026';
+    if(payLater()){
+      postForm('PAY LATER - collect '+money(totals().total)+' at '+(isDelivery()?'delivery':'pickup')).then(function(){showDone(false,!isDelivery(),true);}).catch(function(){fail(btn);});
+      return;
+    }
     var data=Object.fromEntries(new FormData(f));
     function postForm(status){
       var fd=new FormData(f); if(status)fd.set('payment_status',status);
