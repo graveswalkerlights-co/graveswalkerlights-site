@@ -68,7 +68,9 @@ a{color:var(--amber)}
   .hero .photo{order:2;height:auto;min-height:100svh}
   .hero .photo::after{background:linear-gradient(90deg,var(--night) 0%,rgba(14,15,18,0) 22%)}
 }
-@media(max-width:520px){.mark{font-size:10px;letter-spacing:.16em;max-width:15ch}.top nav a{font-size:11px;letter-spacing:.16em;margin-left:16px}}
+.top nav{display:flex;flex:none}
+@media(max-width:700px){.top{padding:16px}.mark{gap:8px;font-size:10px;letter-spacing:.14em;min-width:0}.mark img{width:30px;height:30px}.mark span{max-width:13ch}.top nav a{font-size:10px;letter-spacing:.12em;margin-left:12px}}
+@media(max-width:360px){.mark img{width:24px;height:24px}.mark{gap:6px;letter-spacing:.1em}.top nav a{margin-left:8px;letter-spacing:.06em}}
 .price{font:400 44px/1 var(--serif)}
 .price small{font:500 13px var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-left:8px}
 .btn{display:inline-block;border:1px solid var(--amber);color:var(--amber);background:transparent;padding:14px 22px;font:600 13px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:background .2s,color .2s}
@@ -173,7 +175,7 @@ footer a:hover{color:var(--amber)}
 <body>
 
 <header class="top">
-  <a class="mark" href="#"><img src="img/icon-mark.svg" alt="" width="40" height="40">GravesWalkerLights &amp; Co.</a>
+  <a class="mark" href="#"><img src="img/icon-mark.svg" alt="" width="40" height="40"><span>GravesWalker<wbr>Lights &amp; Co.</span></a>
   <nav><a href="#story">About</a><a href="#gallery">Gallery</a><a href="#order">Order</a></nav>
 </header>
 
@@ -223,12 +225,12 @@ footer a:hover{color:var(--amber)}
     <p class="eyebrow">Gallery</p>
     <h2>See them lit</h2>
     <div class="gallery-grid">
-      <img class="shot" src="img/photos/g1-sm.jpg" srcset="img/photos/g1-sm.jpg 600w, img/photos/g1.jpg 1200w" sizes="(min-width:800px) 33vw, 50vw" alt="Lighted steel balls glowing on the grass at night" loading="lazy">
-      <img class="shot" src="img/photos/g2-sm.jpg" srcset="img/photos/g2-sm.jpg 600w, img/photos/g2.jpg 1200w" sizes="(min-width:800px) 33vw, 50vw" alt="Six lighted balls, green and white wire, stacked together" loading="lazy">
-      <img class="shot" src="img/photos/g3-sm.jpg" srcset="img/photos/g3-sm.jpg 600w, img/photos/g3.jpg 1200w" sizes="(min-width:800px) 33vw, 50vw" alt="One white-wire lighted ball on a wood floor" loading="lazy">
-      <img class="shot" src="img/photos/g4-sm.jpg" srcset="img/photos/g4-sm.jpg 600w, img/photos/g4.jpg 1200w" sizes="(min-width:800px) 33vw, 50vw" alt="Close-up of the lights wrapped around the steel rings" loading="lazy">
-      <img class="shot" src="img/photos/g5-sm.jpg" srcset="img/photos/g5-sm.jpg 600w, img/photos/g5.jpg 1200w" sizes="(min-width:800px) 33vw, 50vw" alt="One green-wire lighted ball against a wall" loading="lazy">
-      <img class="shot" src="img/photos/g6-sm.jpg" srcset="img/photos/g6-sm.jpg 600w, img/photos/g6.jpg 1200w" sizes="(min-width:800px) 33vw, 50vw" alt="Three white-wire lighted balls glowing warm" loading="lazy">
+      <img class="shot" src="img/photos/g1-sm.jpg" srcset="img/photos/g1-sm.jpg 600w, img/photos/g1.jpg 1200w" sizes="(min-width:800px) 33vw, 50vw" alt="Lighted balls hanging in a front-yard tree at night" loading="lazy">
+      <img class="shot" src="img/photos/g2-sm.jpg" srcset="img/photos/g2-sm.jpg 600w, img/photos/g2.jpg 1200w" sizes="(min-width:800px) 33vw, 50vw" alt="Three lighted balls hanging in a bare tree" loading="lazy">
+      <img class="shot" src="img/photos/g3-sm.jpg" srcset="img/photos/g3-sm.jpg 600w, img/photos/g3.jpg 1200w" sizes="(min-width:800px) 33vw, 50vw" alt="A front yard at night with lighted balls in two trees" loading="lazy">
+      <img class="shot" src="img/photos/g4-sm.jpg" srcset="img/photos/g4-sm.jpg 600w, img/photos/g4.jpg 1200w" sizes="(min-width:800px) 33vw, 50vw" alt="Lighted steel balls glowing on the grass at night" loading="lazy">
+      <img class="shot" src="img/photos/g5-sm.jpg" srcset="img/photos/g5-sm.jpg 600w, img/photos/g5.jpg 1200w" sizes="(min-width:800px) 33vw, 50vw" alt="Six lighted balls, green and white wire, stacked together" loading="lazy">
+      <img class="shot" src="img/photos/g6-sm.jpg" srcset="img/photos/g6-sm.jpg 600w, img/photos/g6.jpg 1200w" sizes="(min-width:800px) 33vw, 50vw" alt="One white-wire lighted ball on a wood floor" loading="lazy">
     </div>
   </div>
 </section>
