@@ -1,3 +1,10 @@
 [build]
   publish = "."
   functions = "netlify/functions"
+
+# Instagram's profile link was saved as ".../%23", which 404s. Send it home.
+[[redirects]]
+  from = "/%23"
+  to = "/"
+  status = 301
+  force = true
