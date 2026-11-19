@@ -115,7 +115,7 @@ textarea{resize:vertical;min-height:44px}
 .qty output{min-width:56px;text-align:center;font:400 28px/1 var(--serif)}
 
 .choice{display:grid;gap:10px}
-@media(min-width:600px){.choice{grid-template-columns:1fr 1fr}}
+@media(min-width:600px){.choice{grid-template-columns:1fr 1fr}.choice.three{grid-template-columns:1fr 1fr 1fr}}
 .choice label{position:relative;margin:0;border:1px solid #4a4741;padding:16px 18px;cursor:pointer;color:var(--cream);font-size:16px}
 .choice label span{display:block;color:var(--muted);font-size:13px;margin-top:2px}
 .choice input{position:absolute;opacity:0}
@@ -201,7 +201,7 @@ footer a:hover{color:var(--amber)}
       <dl>
         <div><dt>Frame</dt><dd>12-gauge galvanized steel</dd></div>
         <div><dt>Size</dt><dd>About 12 inches across</dd></div>
-        <div><dt>Lights</dt><dd>100 warm-white mini lights on a 21-ft green or white strand</dd></div>
+        <div><dt>Lights</dt><dd>100 warm-white mini lights on a green or white strand</dd></div>
         <div><dt>Made</dt><dd>Raleigh, North Carolina</dd></div>
         <div><dt>Price</dt><dd>$25 each, plus tax</dd></div>
       </dl>
@@ -272,8 +272,8 @@ footer a:hover{color:var(--amber)}
             <fieldset>
               <legend>Pickup or delivery</legend>
               <div class="choice">
-                <label><input type="radio" name="fulfillment" value="Pickup" checked>Pickup<span>Free, in Raleigh</span></label>
-                <label><input type="radio" name="fulfillment" value="Delivery">Delivery<span>$13.99 per order. Enter your ZIP to check.</span></label>
+                <label><input type="radio" name="fulfillment" value="Pickup" checked>Pickup (free)<span>Raleigh</span></label>
+                <label><input type="radio" name="fulfillment" value="Delivery">Delivery<span>Check availability</span></label>
               </div>
             </fieldset>
 
@@ -290,9 +290,10 @@ footer a:hover{color:var(--amber)}
 
             <fieldset>
               <legend>When to pay</legend>
-              <div class="choice">
-                <label><input type="radio" name="pay_when" value="Pay now" checked>Pay now<span>By card on the next screen</span></label>
-                <label><input type="radio" name="pay_when" value="Pay at pickup/delivery"><b id="paylater-title">Pay at pickup</b><span>Cash, Venmo or card in person</span></label>
+              <div class="choice three">
+                <label><input type="radio" name="pay_when" value="Pay now" checked>Pay now by card<span>On the next screen</span></label>
+                <label><input type="radio" name="pay_when" value="Venmo">Pay now with Venmo<span>To @LightedBalls</span></label>
+                <label><input type="radio" name="pay_when" value="Pay at pickup/delivery"><b id="paylater-title">Pay at pickup</b><span>Venmo or card in person</span></label>
               </div>
             </fieldset>
 
@@ -342,9 +343,9 @@ footer a:hover{color:var(--amber)}
       <div class="pay hidden" id="pay-venmo">
         <img src="img/venmo-qr.svg" alt="Venmo QR code for @LightedBalls">
         <div>
-          <p class="eyebrow">Card checkout is down. Pay on Venmo</p>
+          <p class="eyebrow" id="pay-eyebrow">Card checkout is down. Pay on Venmo</p>
           <p class="amt" id="pay-amt">$26.81</p>
-          <a class="btn" href="https://venmo.com/u/LightedBalls" target="_blank" rel="noopener">Open Venmo &rarr;</a>
+          <a class="btn" id="venmo-link" href="https://venmo.com/u/LightedBalls" target="_blank" rel="noopener">Open Venmo &rarr;</a>
           <p class="fine" style="color:var(--muted);font-size:14px;margin:14px 0 0">Send to <strong>@LightedBalls</strong> and put your name in the note.</p>
         </div>
       </div>
@@ -357,13 +358,13 @@ footer a:hover{color:var(--amber)}
     <p class="eyebrow">Questions</p>
     <h2>Good to know</h2>
     <div class="faq-list">
-      <details><summary>Can they stay outside all season?</summary><p>The frame is galvanized steel, so it won&rsquo;t rot the way grapevine does. Plug them in with an outdoor-rated extension cord.</p></details>
-      <details><summary>How long is the cord?</summary><p>Each ball is wrapped in one 21-foot strand with 100 lights. You&rsquo;ll need an extension cord to reach an outlet.</p></details>
-      <details><summary>How do I hang them?</summary><p>Most people loop a hook or a bit of wire over a sturdy branch and run an outdoor extension cord to the plug. Hang a few at different heights for the best look.</p></details>
-      <details><summary>How do I pay?</summary><p>Pay by card when you order, or choose to pay at pickup or delivery with cash, Venmo or card.</p></details>
+      <details><summary>Can they stay outside all season?</summary><p>The frame is galvanized steel, so it won&rsquo;t rot the way grapevine does.</p></details>
+      <details><summary>How long is the cord?</summary><p>Each ball is wrapped in one 21-foot strand with 100 lights.</p></details>
+      <details><summary>How do I hang them?</summary><p>Most people loop a hook or a bit of wire over a sturdy branch. Hang a few at different heights for the best look.</p></details>
+      <details><summary>How do I pay?</summary><p>Pay by card or Venmo when you order, or pay at pickup or delivery with Venmo or card.</p></details>
       <details><summary>How soon will I get them?</summary><p>Every order is ready for pickup or delivered within 10 days.</p></details>
       <details><summary>Where do you deliver?</summary><p>Most of Raleigh and the towns around it. Enter your ZIP code in the order form and it&rsquo;ll tell you right away. Delivery is $13.99 per order, no matter how many you buy. Pickup in Raleigh is always free.</p></details>
-      <details id="returns"><summary>What&rsquo;s your return policy?</summary><p>You can return your lights within 1 year of purchase. If a ball is defective, we&rsquo;ll swap it for a new one within 3 months of delivery. Call or text us to start a return or swap.</p></details>
+      <details id="returns"><summary>What&rsquo;s your return policy?</summary><p>All sales are final, except for defective balls. If a ball is defective, you can return it within 3 months of pickup or delivery for a replacement or a full refund. Call or text us to start a return.</p></details>
       <details><summary>Questions or a big order?</summary><p>Call or text <a href="tel:+19842840159">984-284-0159</a>.</p></details>
       <details id="privacy"><summary>Privacy policy</summary><p>When you order, we collect your name, phone number, email (if you give it), delivery address (for delivery orders), how you heard about us, and your order details. We use this only to fill your order, contact you about it, and keep our business and tax records. Card payments are handled by Stripe, so we never see or store your card number. We don&rsquo;t sell or share your information with anyone else, except our payment and website providers (Stripe and Netlify) as needed to process your order, or when the law requires it. To see, correct or delete your information, email <a href="mailto:GravesWalkerLights@gmail.com">GravesWalkerLights@gmail.com</a> or call <a href="tel:+19842840159">984-284-0159</a>. Last updated November 15, 2026.</p></details>
     </div>
@@ -395,7 +396,9 @@ footer a:hover{color:var(--amber)}
   function taxC(cents,bp){return Math.round(Math.floor(cents*bp/1000)/10);}
 
   function isDelivery(){return f.fulfillment.value==='Delivery'}
-  function payLater(){return f.pay_when.value!=='Pay now'}
+  function payLater(){return f.pay_when.value==='Pay at pickup/delivery'}
+  function payVenmo(){return f.pay_when.value==='Venmo'}
+  function noCard(){return f.pay_when.value!=='Pay now'}
   function zip(){return $('zip').value.trim()}
   function zipOK(){return Object.prototype.hasOwnProperty.call(ZIPS,zip())}
   function rate(){return isDelivery()&&zipOK()?ZIPS[zip()][1]:WAKE_BP}
@@ -423,8 +426,8 @@ footer a:hover{color:var(--amber)}
     } else {note.textContent='';note.className='zipnote';}
     $('submit').disabled=isDelivery() && z.length===5 && !zipOK();
     $('paylater-title').textContent=isDelivery()?'Pay at delivery':'Pay at pickup';
-    $('pay-fine').textContent=payLater()?'Nothing to pay now. You\u2019ll pay '+money(t.total)+(isDelivery()?' when we deliver':' at pickup')+' by cash, Venmo or card.':'You\u2019ll pay by card on the next screen.';
-    if($('submit').textContent!=='Sending\u2026')$('submit').textContent=payLater()?'Place order':'Continue to payment';
+    $('pay-fine').textContent=payVenmo()?'After you place your order, we\u2019ll show you our Venmo (@LightedBalls) to send '+money(t.total)+'.':payLater()?'Nothing to pay now. You\u2019ll pay '+money(t.total)+(isDelivery()?' when we deliver':' at pickup')+' by Venmo or card.':'You\u2019ll pay by card on the next screen.';
+    if($('submit').textContent!=='Sending\u2026')$('submit').textContent=noCard()?'Place order':'Continue to payment';
     $('f-total').value=money(t.total);
     $('f-breakdown').value=qty+' x $25.00 = '+money(t.sub)+(t.del?' | delivery $13.99':'')+' | tax '+money(t.tax)+' ('+(t.bp/100)+'%) | total '+money(t.total);
   }
@@ -437,16 +440,18 @@ footer a:hover{color:var(--amber)}
     return pickup?'You\u2019ll get a text with the pickup location and time. Your order will be ready within 10 days.'
                  :'We\u2019ll text you to set a delivery time. Your order will arrive within 10 days.';
   }
-  function showDone(paid,pickup,later){
+  function showDone(paid,pickup,later,venmo){
     var t=totals();
     $('done-eyebrow').textContent=paid?'Payment received':'Order received';
-    $('done-msg').textContent=paid?nextSteps(pickup):later?'Your total is '+money(t.total)+'. You\u2019ll pay '+(pickup?'at pickup':'when we deliver')+' by cash, Venmo or card. '+nextSteps(pickup):'Your total is '+money(t.total)+'. '+nextSteps(pickup);
+    $('done-msg').textContent=paid?nextSteps(pickup):later?'Your total is '+money(t.total)+'. You\u2019ll pay '+(pickup?'at pickup':'when we deliver')+' by Venmo or card. '+nextSteps(pickup):'Your total is '+money(t.total)+'. '+nextSteps(pickup);
     $('pay-amt').textContent=money(t.total);
+    $('pay-eyebrow').textContent=venmo?'Pay on Venmo':'Card checkout is down. Pay on Venmo';
+    $('venmo-link').href='https://venmo.com/LightedBalls?txn=pay&amount='+(t.total/100).toFixed(2)+'&note='+encodeURIComponent('Light balls - '+$('name').value.trim());
     $('pay-venmo').classList.toggle('hidden',paid||!!later);
     $('order-form-wrap').classList.add('hidden'); var d=$('done'); d.classList.remove('hidden'); d.focus();
     d.scrollIntoView({behavior:'smooth',block:'start'});
   }
-  function fail(btn){btn.disabled=false;btn.textContent=payLater()?'Place order':'Continue to payment';$('err').innerHTML='That didn\u2019t go through. Please text your order to <a href="tel:+19842840159">984-284-0159</a>.';}
+  function fail(btn){btn.disabled=false;btn.textContent=noCard()?'Place order':'Continue to payment';$('err').innerHTML='That didn\u2019t go through. Please text your order to <a href="tel:+19842840159">984-284-0159</a>.';}
 
   f.addEventListener('submit',function(e){
     e.preventDefault(); $('err').textContent='';
@@ -462,6 +467,10 @@ footer a:hover{color:var(--amber)}
     if(missing.length){$('err').textContent='Please add '+missing.join(', ')+'.';return;}
     render();
     var btn=$('submit'); btn.disabled=true; btn.textContent='Sending\u2026';
+    if(payVenmo()){
+      postForm('VENMO - customer sent to Venmo for '+money(totals().total)+', confirm it came in').then(function(){showDone(false,!isDelivery(),false,true);}).catch(function(){fail(btn);});
+      return;
+    }
     if(payLater()){
       postForm('PAY LATER - collect '+money(totals().total)+' at '+(isDelivery()?'delivery':'pickup')).then(function(){showDone(false,!isDelivery(),true);}).catch(function(){fail(btn);});
       return;
